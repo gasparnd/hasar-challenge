@@ -5,17 +5,17 @@ import RegisterForm from '../../components/RegisterForm'
 
 const Register = () => {
 
-  const onSubmit = (e) => {
-    e.prevent.default
+  const handledSubmit = (e) => {
+    e.preventDefault()
   }
 
-  const onChange = (e) => {
+  const handledChange = (e) => {
 
   }
 
   return (
     <main>
-      <RegisterForm onChange={ onChange } onSubmit={ onSubmit } />
+      <RegisterForm handledChange={handledChange} handledSubmit={handledSubmit} />
     </main>
   )
 }

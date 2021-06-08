@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const RegisterForm = ({ onChange, onSubmit }) => {
+const RegisterForm = ({ handledChange, handledSubmit }) => {
   return (
     <>
-      <form onSubmit={ (e) => onSubmit(e) }>
-        <input onChange={ (e) => onChange(e) } type="text" placeholder="Nombre:" />
-        <input onChange={ (e) => onChange(e) } type="email" placeholder="EMail:" />
-        <input onChange={ (e) => onChange(e) } type="date" placeholder="Fecha de Nacimiento: " />
+      <form handledSubmit={ (e) => handledSubmit(e) }>
+        <input handledChange={ (e) => handledChange(e) } type="text" placeholder="Nombre:" />
+        <input handledChange={ (e) => handledChange(e) } type="email" placeholder="EMail:" />
+        <input handledChange={ (e) => handledChange(e) } type="date" placeholder="Fecha de Nacimiento: " />
         <div>
           <Link to="/genero">
             Volver
