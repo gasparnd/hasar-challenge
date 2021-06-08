@@ -5,6 +5,11 @@ const reducers = (state, action) => {
         ...state,
         user: action.payload
       }
+    case 'SET_USER_INFO':
+      return {
+        ...state,
+        user: action.payload
+      }
     default:
       return state
   }

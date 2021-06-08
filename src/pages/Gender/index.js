@@ -10,7 +10,7 @@ import FameleImage from '../../assets/gen-3.png'
 
 const Gender = (props) => {
   const handleClick = (e) => {
-    const sex = e.target.alt
+    const sex = {sex: e.target.alt}
     console.log(sex)
     props.userSex(sex)
   }

@@ -10,9 +10,11 @@ import App from './App'
 const initialState = {
   user: {
     sex: '',
-    name: '',
-    email: '',
-    date: '',
+    form: {
+      name: '',
+      email: '',
+      date: '',
+    },
     zodiacalSign: '',
     prediction: ''
   }
