@@ -1,27 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, compose, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
 import App from './App'
 
 const initialState = {
-  user: {
-    sex: '',
-    form: {
-      name: '',
-      email: '',
-      date: '',
-    },
-    zodiacalSign: '',
-    prediction: ''
-  }
+  sex: '',
+  name: '',
+  email: '',
+  date: '',
+  zodiacalSign: '',
+  prediction: ''
 }
 
-//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = createStore(reducers, initialState)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducers, initialState, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>

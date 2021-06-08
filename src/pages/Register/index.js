@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
+import { userInfo } from '../../actions'
+
 import RegisterForm from '../../components/RegisterForm'
 
-const Register = () => {
+const Register = (props) => {
+  const [ user, setUser ] = useState({
+    name: '',
+    email: '',
+    date: ''
+
+  })
 
   const handledSubmit = (e) => {
     e.preventDefault()
+    props.userInfo(user)
   }
 
   const handledChange = (e) => {
-
+    setUser({
+      ...user
+      [e.target.name] = [e.target.value]
+    })
   }
 
   return (
@@ -20,4 +32,8 @@ const Register = () => {
   )
 }
 
-export default Register
+const mapDispathToProps = {
+  userInfo
+}
+
+export default connect(null, mapDispathToProps)(Register)
